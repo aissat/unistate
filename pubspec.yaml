@@ -1,0 +1,7 @@
+name: UniState
+publish_to: none
+environment:
+  sdk: ^3.6.0
+workspace:
+  - unistate_core
+  - unistate_bloc
