@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unistate/unistate.dart';
-import 'package:unistate_bloc/unistate_bloc.dart';
+import 'package:unistate_adapter/unistate_bloc.dart';
 
 import 'counter_state.dart';
 

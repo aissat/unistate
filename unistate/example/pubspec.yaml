@@ -37,8 +37,8 @@ dependencies:
 
   unistate:
     path: ../../unistate
-  unistate_bloc:
-    path: ../../unistate_bloc
+  unistate_adapter:
+    path: ../../unistate_adapter
   flutter_bloc: ^8.1.6
 
 dev_dependencies:
