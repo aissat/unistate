@@ -1,4 +1,3 @@
-
 # UniState: A Universal State Management Adapter 📦
 
 ### Package Overview 🌐
@@ -75,11 +74,11 @@ The `unistate` package provides a structured approach to state management, allow
 - **`UniStateProvider<T, S>`**: A `StatefulWidget` that manages the lifecycle of a `UniState` instance and provides it to the widget tree 🌳.
 - **Extensions**: Methods like `read` and `watch` on `BuildContext` to interact with the state 👀.
 
-#### UniStateBloc Package 📦
+#### UniStateAdapter Package 📦
 
 ##### Overview
 
-The `unistate_bloc` package extends the functionality of the `unistate` package by integrating with the `flutter_bloc` package, providing adapters for bloc and cubit state management 🔄.
+The `unistate_adapter` package extends the functionality of the `unistate` package by integrating with the `flutter_adapter` package, providing adapters for bloc and cubit state management 🔄.
 
 ##### Key Components
 
