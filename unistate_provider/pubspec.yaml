@@ -1,4 +1,4 @@
-name: unistate
+name: unistate_provider
 description: "A new Flutter package project."
 version: 0.0.1
 # homepage:
@@ -6,6 +6,7 @@ version: 0.0.1
 environment:
   sdk: ^3.6.0
   flutter: ">=1.17.0"
+resolution: workspace
 
 dependencies:
   flutter:

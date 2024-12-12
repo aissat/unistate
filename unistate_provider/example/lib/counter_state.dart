@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:unistate/unistate.dart';
+import 'package:unistate_provider/unistate.dart';
 
 class CounterCubit extends Cubit<CounterState>
     implements UniState<CounterState> {
