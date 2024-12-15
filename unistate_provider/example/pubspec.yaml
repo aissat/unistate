@@ -40,6 +40,7 @@ dependencies:
   unistate_adapter:
     path: ../../unistate_adapter
   flutter_bloc: ^8.1.6
+  get_it: ^8.0.3
 
 dev_dependencies:
   flutter_test:
