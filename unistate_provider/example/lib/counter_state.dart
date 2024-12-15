@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:unistate_provider/unistate.dart';
 
@@ -7,11 +8,6 @@ class CounterCubit extends Cubit<CounterState>
   CounterCubit() : super(CounterState.initial()) {
     debugPrint('CounterCubit initialized with initial state');
   }
-
-  @override
-  // void dispatch(CounterState action) {
-  //   emit(action);
-  // }
 
   @override
   void dispose() {
