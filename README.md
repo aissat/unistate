@@ -1,6 +1,6 @@
-# UniState: A Universal State Management Adapter 📦
+# UniState: A Universal State Management Adapter 🚀
 
-### Package Overview 🌐
+### Package Overview 📦
 
 UniState is an adapter package designed to provide an agnostic approach to state management in Flutter, offering a unified interface that seamlessly integrates with various state management systems while maintaining Flutter's native code style.
 
@@ -8,113 +8,156 @@ UniState is an adapter package designed to provide an agnostic approach to state
 
 The primary goal of UniState is to:
 
-- **Create an Adapter Layer**: Provide a flexible adapter for different state management systems 🛠️
-- **Maintain Code Flexibility**: Allow easy switching between state management approaches 🔄
-- **Preserve Flutter's Code Style**: Ensure consistency and idiomatic Flutter development 💻
+- **Create an Adapter Layer**: Provide a flexible adapter for different state management systems to ensure compatibility with Flutter's native widget `ValueListenableBuilder` 
+- **Maintain Code Flexibility**: Allow easy switching between state management approaches 
+- **Preserve Flutter's Code Style**: Ensure consistency and idiomatic Flutter development 
+
+| Bloc                                                                                 | Cubit                                                                                  | Provider                                                                                     |
+| ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| ![Bloc](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/bloc.png) | ![Cubit](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/cubit.png) | ![Provider](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/provider.png) |
 
 ### Why UniState? 🤔
 
 Developers often face challenges when:
 
-- Choosing a state management solution ⚖️
-- Migrating between different state management systems 🔄
-- Maintaining a consistent code structure 📂
+- Choosing a state management solution 
+- Migrating between different state management systems 
+- Maintaining a consistent code structure 
 
 UniState solves these problems by providing a universal adapter that:
 
-- Decouples your application logic from specific state management implementations 🧩
-- Provides a consistent interface across different state management approaches 🛠️
-- Allows for easy experimentation and migration between state management systems 🔄
+- Decouples your application logic from specific state management implementations 
+- Provides a consistent interface across different state management approaches 
+- Allows for easy experimentation and migration between state management systems 
 
-### The State Management Landscape 🌍
+### The State Management Landscape 🌐
 
 Flutter offers numerous state management solutions, each with its unique code style and philosophy. Developers often face challenges when:
 
-- Choosing a state management approach 🔍
-- Migrating between different state management systems 🔄
-- Avoiding tight coupling to a specific state management library 🔒
+- Choosing a state management approach 
+- Migrating between different state management systems 
+- Avoiding tight coupling to a specific state management library 
 
 ### Our Philosophy 💡
 
 The primary purpose of UniState is to:
 
-- **Create an Adapter Layer**: Provide a flexible adapter for different state management systems 🧩
-- **Maintain Code Flexibility**: Allow easy switching between state management approaches 🔄
-- **Preserve Flutter's Code Style**: Ensure consistency and idiomatic Flutter development 💻
-- **Preserve Your Code**: Protect your application's core logic from changes caused by state management system shifts 🛡️
+- **Create an Adapter Layer**: Provide a flexible adapter for different state management systems 
+- **Maintain Code Flexibility**: Allow easy switching between state management approaches 
+- **Preserve Flutter's Code Style**: Ensure consistency and idiomatic Flutter development 
+- **Preserve Your Code**: Protect your application's core logic from changes caused by state management system shifts 
 
-### Supported State Managers 🧳
+### Supported State Managers 🛠️
 
 UniState is designed to work with multiple state management approaches, including but not limited to:
 
-- BLoC (Business Logic Component) 💼
-- Provider 🏷️
-- Riverpod 🌱
-- Cubit 🪄
-- Custom State Management Solutions 🛠️
+- BLoC (Business Logic Component) 
+- Provider 
+- Riverpod 
+- Cubit 
+- Custom State Management Solutions 
 
-### Key Features 🔑
+## Key Features and Benefits 🌟
 
-- **Agnostic Integration**: Seamlessly work with different state management libraries 🔄
-- **Minimal Overhead**: Lightweight adapter that doesn't compromise performance ⚡
-- **Flutter-Friendly**: Maintains the natural flow and style of Flutter development 🌟
-- **Easy Migration**: Simplify transitions between state management approaches 🛣️
+- **Agnostic Integration**: Seamlessly work with different state management libraries 
+- **Minimal Overhead**: Lightweight adapter that doesn't compromise performance 
+- **Flutter-Friendly**: Maintains the natural flow and style of Flutter development 
+- **Easy Migration**: Simplify transitions between state management approaches 
+- **Decoupled Architecture**: Keep your core application logic independent of state management details 
+- **Future-Proof Development**: Easily adapt to new state management trends and technologies 
+- **Consistent Developer Experience**: Maintain a uniform approach to state management across different parts of your application 
 
-### Key Components 🧩
+### Key Components 🔑
 
-#### UniState Package 📦
+#### UniState Core Interfaces
 
-##### Overview
+##### `UniState<T extends Listenable>` 
+- **Purpose**: Defines a standardized contract for state management
+- **Key Features**:
+  - InheritedNotifier-based implementation
+  - Provides state to the widget tree
+  - Dependency injection for state management
 
-The `unistate` package provides a structured approach to state management, allowing developers to manage application state efficiently and integrate it seamlessly with the Flutter widget tree 🌳.
+##### `MultiUniState`
+- **Purpose**: Manage multiple state lifecycles and provide states to the widget tree
+- **Key Features**:
+  - Manage multiple `Listenable` objects
+  - Reactive state propagation
+  - Scoped state management
 
-##### Key Components
+#### UniState Adapter Components
 
-- **`UniState<T>`**: An abstract class defining a contract for managing state, with methods for getting, updating, and resetting the state 🔄.
-- **`UniStateProvider<T, S>`**: A `StatefulWidget` that manages the lifecycle of a `UniState` instance and provides it to the widget tree 🌳.
-- **Extensions**: Methods like `read` and `watch` on `BuildContext` to interact with the state 👀.
+##### `UnistateBlocMixin<Event, State>`
+- **Purpose**: Make BLoC state holder compatible with `ValueListenable`
+- **Key Capabilities**:
+  - Listen to Bloc state changes
+  - Transform Bloc events to reactive state updates
+  - Minimal performance overhead
 
-#### UniStateAdapter Package 📦
+##### `UnistateCubitMixin<State>`
+- **Purpose**: Make Cubit state holder compatible with `ValueListenable`
+- **Key Capabilities**:
+  - Reactive state transformation
+  - Simplified state observation
+  - Compatibility with Flutter's reactive programming model
 
-##### Overview
+##### `UnistateNotifierMixin<T>`
+- **Purpose**: Make Notifier state holder compatible with `ValueListenable`
+- **Key Capabilities**:
+  - Reactive state transformation
+  - Simplified state observation
+  - Compatibility with Flutter's reactive programming model
 
-The `unistate_adapter` package extends the functionality of the `unistate` package by integrating with the `flutter_adapter` package, providing adapters for bloc and cubit state management 🔄.
+##### `UnistateListenableMixin<T>`
+- **Purpose**: Make any state holder compatible with `ValueListenable`
+- **Key Capabilities**:
+  - Provide current state as `ValueListenable`
+  - Add and remove listeners for state changes
 
-##### Key Components
+#### Extension Methods 🧩
 
-- **`BlocAdapter<S, E>`**: An adapter that listens to a `Bloc` and updates its value for reactive UI updates 🔄.
-- **`CubitAdapter<T>`**: An adapter that listens to a `Cubit` and updates its value for reactive UI updates 🔄.
-- **Extensions**: Methods to convert `Bloc` and `Cubit` instances into `ValueListenable` 📈.
+##### State Interaction Extensions
+- `read<T>()`: Synchronously read current state
+- `watch<T>()`: Listen to state changes reactively
 
-### Key Features and Benefits 🎉
+## Packages 📦
 
-- **Agnostic Integration**: Seamlessly work with different state management libraries 🔄
-- **Minimal Overhead**: Lightweight adapter that doesn't compromise performance ⚡
-- **Flutter-Friendly**: Maintains the natural flow and style of Flutter development 🌟
-- **Easy Migration**: Simplify transitions between state management approaches 🛣️
-- **Decoupled Architecture**: Keep your core application logic independent of state management details 🧩
-- **Future-Proof Development**: Easily adapt to new state management trends and technologies 🔮
-- **Consistent Developer Experience**: Maintain a uniform approach to state management across different parts of your application 🧑‍💻
+### 1. UniState Adapter 
 
-### Example Concept 📝
+#### Purpose
+The UniState Adapter is a powerful package that standardizes state management by converting various state management solutions to a unified `ValueListenable` interface.
 
-```dart
-// Unified state management interface
-abstract class UniState<T> {
-  T get state;
-  void updateState(T newState);
-  void dispose();
-}
-// Adapter for different state managers
-class StateManagerAdapter<T> implements UniState<T> {
-  // Adapt various state management systems
-  // (BLoC, Provider, Cubit, etc.)
-}
-```
+#### Key Features
+- Convert Bloc to ValueListenable
+- Convert Cubit to ValueListenable
+- Type-safe state transformations
+- Seamless integration with existing state management patterns
+
+#### Use Cases
+- Migrate between state management solutions
+- Standardize state handling across different components
+- Simplify complex state management logic
+
+### 2. UniState Provider 
+
+#### Purpose
+UniState Provider offers a lightweight, flexible state management solution using the provider pattern with enhanced ValueListenable support.
+
+#### Key Features
+- Simple and intuitive provider pattern implementation
+- Deep integration with ValueListenable
+- Modular state management
+- Minimal boilerplate code
+- Type-safe state handling
+
+#### Use Cases
+- Build scalable Flutter applications
+- Manage local and global application state
+- Create reactive UI components
 
 ## Getting Started 🚀
 
-### Installation 🔧
+### Installation 
 
 Add the following dependencies to your `pubspec.yaml`:
 
@@ -124,41 +167,27 @@ dependencies:
   unistate_bloc: ^latest_version
 ```
 
-### Basic Usage Example 🖥️
+### Basic Usage Example 📋
 
 Here's a simple counter app demonstrating UniState's flexibility:
 
 ```dart
 // Define your state
-class CounterState {
-  final int count;
-  CounterState({required this.count});
-}
+class CounterCubit extends Cubit<int> with UnistateCubitMixin<int> {
+  CounterCubit() : super(0);
 
-// Create a state manager implementing UniState
-class CounterCubit extends Cubit<CounterState> implements UniState<CounterState> {
-  CounterCubit() : super(CounterState(count: 0));
+  void increment() => emit(state + 1);
+  void decrement() => emit(state - 1);
+} 
 
+class _CounterDisplay extends StatelessWidget {
   @override
-  void performAction(String actionType, [dynamic payload]) {
-    switch (actionType) {
-      case 'increment':
-        emit(CounterState(count: state.count + 1));
-        break;
-      case 'decrement':
-        emit(CounterState(count: state.count - 1));
-        break;
-    }
-  }
-
-  @override
-  void updateState(CounterState newState) {
-    emit(newState);
-  }
-
-  @override
-  void resetState() {
-    emit(CounterState(count: 0));
+  Widget build(BuildContext context) {
+    final count = context.watch<CounterCubit>()?.state;
+    return Text(
+      'count: $count',
+      style: const TextStyle(fontSize: 24),
+    );
   }
 }
 
@@ -166,19 +195,19 @@ class CounterCubit extends Cubit<CounterState> implements UniState<CounterState>
 class CounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final stateManager = UniStateProvider.of<CounterCubit, CounterState>(context);
-  
+    final stateManager = context.read<CounterCubit>();
     return Scaffold(
       body: Column(
         children: [
+          _CounterDisplay(),
           ValueListenableBuilder(
-            valueListenable: stateManager.asValueListenable(),
+            valueListenable: stateManager!,
             builder: (context, state, child) {
-              return Text('Count: ${state.count}');
+              return Text('Count: $state');
             },
           ),
           ElevatedButton(
-            onPressed: () => stateManager.performAction('increment'),
+            onPressed: () => stateManager.increment(),
             child: Text('Increment'),
           ),
         ],
@@ -188,39 +217,39 @@ class CounterPage extends StatelessWidget {
 }
 ```
 
-### Key Concepts 🧠
+### Key Concepts 📚
 
-- **UniState Interface**: Provides a consistent method for state management 🛠️
-- **Flexible Adapters**: Works with various state management libraries 🔄
-- **Easy State Manipulation**: Use `performAction()` for state changes 🔄
+- **UniState**: Provides a unified interface for state management
+- **Flexible Adapters**: Works with various state management libraries 
+- **Easy State Manipulation**: Provides a unified interface for state manipulation 
+- **ValueListenable**: Enables reactive state management
 
-### Supported State Managers ✅
+### Supported State Managers 🛠️
 
-- [ ] BLoC [WIP]
-- [ ] Cubit [WIP]
-- [ ] Provider
+- [X] BLoC [WIP]
+- [X] Cubit [WIP]
+- [X] Provider [WIP]
 - [ ] Riverpod
-
-- Custom State Management Solutions 🛠️
+- Custom State Management Solutions 
 
 ### Migration and Compatibility 🔄
 
 UniState makes it easy to:
 
-- Switch between state management approaches 🔄
-- Maintain consistent code structure 📂
-- Decouple application logic from state management details 🧩
+- Switch between state management approaches 
+- Maintain consistent code structure 
+- Decouple application logic from state management details 
 
 ## Troubleshooting 🛠️
 
-- Ensure you've imported the necessary packages 📦
-- Check that your state manager implements the `UniState` interface 🛠️
-- Use `UniStateProvider` to wrap your widget tree 🌳
+- Ensure you've imported the necessary packages 
+- Check that your state manager implements the `UniState` interface 
+- Use `UniStateProvider` to wrap your widget tree 
 
 ## Contributing 🤝
 
-Contributions are welcome! Please feel free to submit a Pull Request 🔄.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License 📜
+## License 📄
 
 This project is licensed under the MIT License.
