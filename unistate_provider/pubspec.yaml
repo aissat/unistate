@@ -1,16 +1,19 @@
 name: unistate_provider
-description: "A new Flutter package project."
+description: A Flutter state management solution using the provider pattern with ValueListenable support
 version: 0.0.1
-# homepage:
+homepage: https://github.com/aissat/unistate
+repository: https://github.com/aissat/unistate
+# publish_to: none
 
 environment:
   sdk: ^3.6.0
   flutter: ">=1.17.0"
 resolution: workspace
-
 dependencies:
   flutter:
     sdk: flutter
+  unistate_adapter:
+    path: ../unistate_adapter
 
 dev_dependencies:
   flutter_test:
