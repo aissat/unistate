@@ -3,8 +3,8 @@ import 'package:flutter/foundation.dart';
 
 /// Mixin for ChangeNotifier based classes
 mixin UnistateNotifierMixin<T> on ChangeNotifier implements ValueListenable<T> {
-  T get initialValue;
   T? _value;
+  T get initialValue;
 
   @override
   T get value => _value ??= initialValue;
@@ -14,11 +14,5 @@ mixin UnistateNotifierMixin<T> on ChangeNotifier implements ValueListenable<T> {
       _value = newValue;
       notifyListeners();
     }
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    // AutoDisposeMixin.dispose();
   }
 }
