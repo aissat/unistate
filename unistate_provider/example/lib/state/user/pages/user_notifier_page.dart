@@ -62,7 +62,7 @@ class UserNotifierPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () => stateManager.reset(),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                style: ElevatedButton.styleFrom(backgroundColor:Color(0xff27b499)),
                 child: const Text('Reset State'),
               ),
             ],

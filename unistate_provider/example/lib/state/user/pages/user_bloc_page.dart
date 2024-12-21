@@ -72,7 +72,7 @@ class UserBlocPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () => stateManager.add(ResetEvent()),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                style: ElevatedButton.styleFrom(backgroundColor: Color(0xff27b499)),
                 child: const Text('Reset State'),
               ),
             ],
