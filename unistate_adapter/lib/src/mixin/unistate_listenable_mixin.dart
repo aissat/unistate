@@ -1,13 +1,28 @@
 import 'package:flutter/foundation.dart';
 
-/// Mixin to make any state holder compatible with ValueListenable
+/// Mixin for classes that need to implement ValueListenable
 mixin UnistateListenableMixin<T> implements ValueListenable<T> {
-  T get currentState;
-  @override
-  void addListener(VoidCallback listener);
-  @override
-  void removeListener(VoidCallback listener);
+  final List<VoidCallback> _listeners = [];
 
   @override
-  T get value => currentState;
-} 
+  T get value;
+
+  @override
+  VoidCallback addListener(VoidCallback listener) {
+    _listeners.add(listener);
+    return () {
+      removeListener(listener);
+    };
+  }
+
+  void notifyListeners() {
+    for (var listener in List.of(_listeners)) {
+      listener();
+    }
+  }
+
+  @override
+  void removeListener(VoidCallback listener) {
+    _listeners.remove(listener);
+  }
+}
