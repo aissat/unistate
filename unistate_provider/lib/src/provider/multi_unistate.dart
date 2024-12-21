@@ -27,10 +27,7 @@ class UniStateInheritedNotifier extends InheritedWidget {
 
   @override
   bool updateShouldNotify(UniStateInheritedNotifier oldWidget) {
-    final shouldNotify = oldWidget.version != version;
-    // print(
-    // 'updateShouldNotify: $shouldNotify (old version: ${oldWidget.version}, new version: $version)')
-    return shouldNotify;
+    return oldWidget.version != version;
   }
 
   static UniStateInheritedNotifier? of(BuildContext context) {
