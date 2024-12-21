@@ -8,6 +8,7 @@ class UserNotifierPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final stateManager = context.read<UserNotifier>();
+    final user = context.watch<UserNotifier>()?.value;
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -16,7 +17,10 @@ class UserNotifierPage extends StatelessWidget {
         children: [
           Text('Building By using watch',
               style: Theme.of(context).textTheme.titleMedium),
-          _UserNameDisplay(),
+          Text(
+            'Name: ${user?.name ?? ""}',
+            style: const TextStyle(fontSize: 24),
+          ),
           Text('Building By using ValueListenableBuilder',
               style: Theme.of(context).textTheme.titleMedium),
           ValueListenableBuilder(
@@ -62,26 +66,13 @@ class UserNotifierPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () => stateManager.reset(),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                style: ElevatedButton.styleFrom(backgroundColor:Color(0xff27b499)),
                 child: const Text('Reset State'),
               ),
             ],
           ),
         ],
       ),
-    );
-  }
-}
-
-class _UserNameDisplay extends StatelessWidget {
-  const _UserNameDisplay();
-
-  @override
-  Widget build(BuildContext context) {
-    final user = context.watch<UserNotifier>()?.value;
-    return Text(
-      'Name: ${user?.name ?? ""}',
-      style: const TextStyle(fontSize: 24),
     );
   }
 }

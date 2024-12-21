@@ -9,7 +9,7 @@ class UserCubitPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final stateManager = context.read<UserCubit>();
-
+    final user = context.watch<UserCubit>()?.value;
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -18,7 +18,10 @@ class UserCubitPage extends StatelessWidget {
         children: [
           Text('Building By using watch',
               style: Theme.of(context).textTheme.titleMedium),
-          _UserNameDisplay(),
+          Text(
+            'Name: ${user?.name ?? ""}',
+            style: const TextStyle(fontSize: 24),
+          ),
           Text('Building By using ValueListenableBuilder',
               style: Theme.of(context).textTheme.titleMedium),
           ValueListenableBuilder(
@@ -49,14 +52,6 @@ class UserCubitPage extends StatelessWidget {
             runSpacing: 10,
             alignment: WrapAlignment.center,
             children: [
-              // ElevatedButton(
-              //   onPressed: () => stateManager.performAction(
-              //     'updateUser',
-              //     UserState(
-              //         name: 'John Doe', age: 30, email: 'john.doe@example.com'),
-              //   ),
-              //   child: const Text('Update Full Profile'),
-              // ),
               ElevatedButton(
                 onPressed: () => stateManager.updateName('Jane Smith'),
                 child: const Text('Update Name'),
@@ -72,7 +67,7 @@ class UserCubitPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () => stateManager.reset(),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                style: ElevatedButton.styleFrom(backgroundColor: Color(0xff27b499)),
                 child: const Text('Reset State'),
               ),
             ],
@@ -83,15 +78,3 @@ class UserCubitPage extends StatelessWidget {
   }
 }
 
-class _UserNameDisplay extends StatelessWidget {
-  const _UserNameDisplay();
-
-  @override
-  Widget build(BuildContext context) {
-    final user = context.watch<UserCubit>()?.value;
-    return Text(
-      'Name: ${user?.name ?? ""}',
-      style: const TextStyle(fontSize: 24),
-    );
-  }
-}
