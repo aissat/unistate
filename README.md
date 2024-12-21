@@ -20,9 +20,9 @@ The primary goal of UniState is to:
 - **Maintain Code Flexibility**: Allow easy switching between state management approaches
 - **Preserve Flutter's Code Style**: Ensure consistency and idiomatic Flutter development
 
-| Bloc                                                                               | Cubit                                                                                | Provider                                                                                   |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| ![Bloc](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/bloc.png) | ![Cubit](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/cubit.png) | ![Provider](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/provider.png) |
+| Bloc                                                                               | Cubit                                                                                | Provider                                                                                   | getx                                                                                 |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |------------------------------------------------------------------------------------------ |
+| ![Bloc](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/bloc.png) | ![Cubit](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/cubit.png) | ![Provider](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/provider.png) |![Getx](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/getx.png)|
 
 ### Why UniState? 🤔
 
@@ -59,10 +59,11 @@ The primary purpose of UniState is to:
 
 UniState is designed to work with multiple state management approaches, including but not limited to:
 
-- BLoC (Business Logic Component)
-- Provider
-- Riverpod
+- BLoC 
 - Cubit
+- Provider
+- Getx
+- Riverpod
 - Custom State Management Solutions
 
 ## Key Features and Benefits 🌟
@@ -250,6 +251,7 @@ class CounterPage extends StatelessWidget {
 - [X] BLoC [WIP]
 - [X] Cubit [WIP]
 - [X] Provider [WIP]
+- [x] Getx [WIP]
 - [ ] Riverpod
 
 - Custom State Management Solutions
