@@ -9,6 +9,7 @@ class UserBlocPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final stateManager = context.read<UserBloc>(); //UserBloc();
+    final user = context.watch<UserBloc>()?.value;
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -17,7 +18,10 @@ class UserBlocPage extends StatelessWidget {
         children: [
           Text('Building By using watch',
               style: Theme.of(context).textTheme.titleMedium),
-          _UserNameDisplay(),
+          Text(
+            'Name: ${user?.name ?? ""}',
+            style: const TextStyle(fontSize: 24),
+          ),
           Text('Building By using ValueListenableBuilder',
               style: Theme.of(context).textTheme.titleMedium),
           ValueListenableBuilder(
@@ -47,15 +51,7 @@ class UserBlocPage extends StatelessWidget {
             spacing: 10,
             runSpacing: 10,
             alignment: WrapAlignment.center,
-            children: [
-              // ElevatedButton(
-              //   onPressed: () => stateManager.performAction(
-              //     'updateUser',
-              //     UserState(
-              //         name: 'John Doe', age: 30, email: 'john.doe@example.com'),
-              //   ),
-              //   child: const Text('Update Full Profile'),
-              // ),
+            children: <Widget>[
               ElevatedButton(
                 onPressed: () =>
                     stateManager.add(UpdateNameEvent('Jane Smith')),
@@ -79,19 +75,6 @@ class UserBlocPage extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class _UserNameDisplay extends StatelessWidget {
-  const _UserNameDisplay();
-
-  @override
-  Widget build(BuildContext context) {
-    final user = context.watch<UserBloc>()?.value;
-    return Text(
-      'Name: ${user?.name ?? ""}',
-      style: const TextStyle(fontSize: 24),
     );
   }
 }
