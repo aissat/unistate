@@ -37,12 +37,17 @@ mixin UnistateGetxMixin<T extends Object?> on GetxController
   }
 
   void initState(T initialState) {
-    // print('initState');
+    if (_rx != null) {
+      throw StateError('UniStateGetxMixin already initialized');
+    }
     _rx = initialState.obs;
   }
 
   @override
   void onClose() {
+    if (!_listeners.isEmpty) {
+      print('Warning: UniStateGetxMixin disposed with active listeners');
+    }
     _worker?.dispose();
     _worker = null;
     _listeners.clear();
