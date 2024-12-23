@@ -4,7 +4,7 @@
 | Package                                                                          | Pub                                                                                                         |
 | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | [unistate_provider](https://github.com/aissat/unistate/tree/main/unistate_provider) | [![pub package](https://img.shields.io/pub/v/unistate_provider.svg)](https://pub.dev/packages/unistate_provider) |
-| [unistate_adapter](https://github.com/aissat/unistate/tree/main/unistate_adapter)   | [![pub package](//img.shields.io/pub/v/unistate_adapter.svg)](https://pub.dev/packages/unistate_adapter)         |
+| [unistate_adapter](https://github.com/aissat/unistate/tree/main/unistate_adapter)   | [![pub package](https://img.shields.io/pub/v/unistate_adapter.svg)](https://pub.dev/packages/unistate_adapter)         |
 
 
 
