@@ -1,12 +1,9 @@
 # UniState: A Universal State Management Adapter 🚀
 
-
 | Package                                                                          | Pub                                                                                                         |
 | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | [unistate_provider](https://github.com/aissat/unistate/tree/main/unistate_provider) | [![pub package](https://img.shields.io/pub/v/unistate_provider.svg)](https://pub.dev/packages/unistate_provider) |
 | [unistate_adapter](https://github.com/aissat/unistate/tree/main/unistate_adapter)   | [![pub package](https://img.shields.io/pub/v/unistate_adapter.svg)](https://pub.dev/packages/unistate_adapter)         |
-
-
 
 Package Overview  📦  [![pub package](https://img.shields.io/pub/v/unistate.svg)](https://pub.dev/packages/unistate)
 
@@ -20,9 +17,9 @@ The primary goal of UniState is to:
 - **Maintain Code Flexibility**: Allow easy switching between state management approaches
 - **Preserve Flutter's Code Style**: Ensure consistency and idiomatic Flutter development
 
-| Bloc                                                                               | Cubit                                                                                | Provider                                                                                   | getx                                                                                 |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |------------------------------------------------------------------------------------------ |
-| ![Bloc](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/bloc.png) | ![Cubit](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/cubit.png) | ![Provider](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/provider.png) |![Getx](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/getx.png)|
+| Bloc                                                                               | Cubit                                                                                | Provider                                                                                   | getx                                                                               |
+| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| ![Bloc](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/bloc.png) | ![Cubit](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/cubit.png) | ![Provider](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/provider.png) | ![Getx](https://raw.githubusercontent.com/aissat/unistate/main/screenshots/getx.png) |
 
 ### Why UniState? 🤔
 
@@ -59,7 +56,7 @@ The primary purpose of UniState is to:
 
 UniState is designed to work with multiple state management approaches, including but not limited to:
 
-- BLoC 
+- BLoC
 - Cubit
 - Provider
 - Getx
@@ -193,6 +190,8 @@ dependencies:
 
 Here's a simple counter app demonstrating UniState's flexibility:
 
+> You can find the complete example in the [repository](https://github.com/aissat/unistate/tree/main/example).
+
 ```dart
 // Define your state
 class CounterCubit extends Cubit<int> with UnistateCubitMixin<int> {
@@ -251,7 +250,7 @@ class CounterPage extends StatelessWidget {
 - [X] BLoC [WIP]
 - [X] Cubit [WIP]
 - [X] Provider [WIP]
-- [x] Getx [WIP]
+- [X] Getx [WIP]
 - [ ] Riverpod
 
 - Custom State Management Solutions
